@@ -1,0 +1,26 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    border: 3px solid #22c55e;
+}
+
+.dashboard {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1e293b;
+    border-radius: 10px;
+    font-size: 20px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Smart Traffic System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>🚦 AI-Based Predictive Smart Traffic Management</h1>
+
+<div class="grid">
+    <img src="/video1">
+    <img src="/video2">
+    <img src="/video3">
+    <img src="/video4">
+</div>
+
+<div class="dashboard">
+    <h2>🚦 AI Signal Decision</h2>
+    <p id="lane">Lane: Loading...</p>
+    <p id="green">Green Time: --</p>
+    <p id="mode">Mode: --</p>
+</div>
+
+<script>
+function updateSignal() {
+    fetch('/signal')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("lane").innerText =
+                "Lane Selected: " + data.lane;
+
+            document.getElementById("green").innerText =
+                "Green Time: " + data.green_time + " sec";
+
+            document.getElementById("mode").innerText =
+                "Mode: " + data.mode;
+        })
+        .catch(err => console.error(err));
+}
+
+setInterval(updateSignal, 2000);
+updateSignal();
+</script>
+
+</body>
+</html>
